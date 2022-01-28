@@ -4,9 +4,129 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Technical Documentation Page</title>
 </head>
 <body>
-  
+  <main id="main-doc">
+    <!-- Section 1 -->
+    <section class="main-section" id="What_is_Vue.js?">
+      <header>What is Vue.js?</header>
+      <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.</p>
+      <p>If you'd like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.</p>
+      <p>If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="main-section" id="Getting_Started">
+      <header>Getting Started</header>
+      <p>The easiest way to try out Vue.js is using the Hello World example. Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can create an index.html file and include Vue with:</p>
+      <ul>
+        <li>
+          <code>
+            <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"&gt;&lt;/script&gt;</pre>
+          </code>
+        </li>
+        <li>
+          <code>
+            <pre class="code">&lt;script src="https://cdn.jsdelivr.net/npm/vue@2"&gt;&lt;/script>&gt;&lt;/script&gt;</pre>
+          </code>
+        </li>
+      </ul>
+      <p>The Installation page provides more options of installing Vue. Note: We do not recommend that beginners start with vue-cli, especially if you are not yet familiar with Node.js-based build tools.</p>
+      <p>If you prefer something more interactive, you can also check out this tutorial series on Scrimba, which gives you a mix of screencast and code playground that you can pause and play around with anytime.</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="main-section" id="Declarative_Rendering">
+      <header>Declarative Rendering</header>
+      <p>At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:</p>
+      <ul>
+        <li>
+          <code>
+            <pre class="code">
+              &lt;div id="app"&gt;
+                {{ message }}
+              &lt;/div&gt;</pre>
+          </code>
+        </li>
+        <li>
+          <code>
+            <pre class="code">
+              var app = new Vue({
+                el: '#app',
+                data: {
+                  message: 'Hello Vue!'
+                }
+              })</pre>
+          </code>
+        </li>
+      </ul>
+      <p>We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now reactive.</p>
+      <span class="run-code">Hello Vue!</span>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="main-section" id="Conditionals_and_Loops">
+      <header>Conditionals and Loops</header>
+      <p>It's easy to toggle the presence of an element, too:</p>
+      <ul>
+        <li>
+          <code>
+            <pre class="code">
+              &lt;div id="app-3"&gt;
+                &lt;span v-if="seen"&gt;Now you see me&lt;/span&gt;
+              &lt;/div&gt;</pre>
+          </code>
+        </li>
+        <li>
+          <code>
+            <pre class="code">
+              var app3 = new Vue({
+                el: '#app-3',
+                data: {
+                  seen: true
+                }
+              })</pre>
+          </code>
+        </li>
+      </ul>
+      <span class="run-code">Now you see me</span>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="main-section" id="Handling_User_Input">
+      <header>Handling User Input</header>
+      <p>To let users interact with your app, we can use the "v-on" directive to attach event listeners that invoke methods on our Vue instances:</p>
+      <ul>
+        <li>
+          <code>
+            <pre class="code">
+              &lt;div id="app-5"&gt;
+                &lt;p&gt;{{ message }}&lt;/p&gt;
+                &lt;button v-on:click="reverseMessage"&gt;Reverse Message&lt;/button&gt;
+              &lt;/div&gt;</pre>
+          </code>
+        </li>
+        <li>
+          <code>
+            <pre class="code">
+              var app5 = new Vue({
+                el: '#app-5',
+                data: {
+                  message: 'Hello Vue.js!'
+                },
+                methods: {
+                  reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                  }
+                }
+              })</pre>
+          </code>
+        </li>
+      </ul>
+      <p>Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.</p>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,0 +1,19 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+header {
+  font-weight: 600;
+}
+
+span {
+  display: block;
+  font-family: monospace;
+  background-color: bisque;
+}
+
+pre {
+  background-color: bisque;
+}
