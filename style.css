@@ -80,6 +80,24 @@ pre {
   background-color: rgb(230, 229, 229);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
+  html {font-size: 8px;}
+  nav {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+  }
+  nav header {
+    font-size: 2rem;
+    text-align: left;
+  }
   
+
+  main {
+    margin: 0;
+  }
+  pre {font-size: 1rem;}
+  span {font-size: 1.2rem;}
 }
