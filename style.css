@@ -101,6 +101,7 @@ pre {
 
   main {
     margin: 0;
+    padding: 10px;
   }
   pre {font-size: 1rem;}
   span {font-size: 1.2rem;}
